@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  php-apache:
+    build: .
+    container_name: php-container
+    ports:
+      - "8080:80"             # Expose the PHP/Apache server on port 8080
+    volumes:
+      - ./src:/var/www/html   # Map the local src folder to the container's web root
+    depends_on:
+      - course-mysql          # Ensure MySQL is ready before starting PHP
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  course-mysql:
+    image: mysql:8.0
+    container_name: course-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+    ports:
+      - "3307:3306"           # Expose MySQL on port 3306
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./data:/var/lib/mysql-files
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  db-data:
+
