@@ -1,12 +1,22 @@
 <h1>Dockerized Organizational Database Management System</h1>
 
-<p>This project demonstrates the setup and use of a MySQL database with a PHP interface in a Dockerized environment, aimed at managing organizational data like employees, departments, and projects. The system is built to allow easy database access and management through a series of PHP scripts, and includes data loading and management tools using KNIME and PL/SQL scripts.</p>
+<p>This project demonstrates the setup and use of a MySQL database with a PHP interface in a Dockerized environment, aimed at managing organizational data like employees, departments, and projects. The system is built to allow easy database access and management through a series of PHP scripts, and includes additional management tools using PL/SQL scripts.</p>
 
-
-
+<h2>Table of Contents</h2>
+<ol>
+    <li><a href="#project-overview">Project Overview</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#er-diagram">ER Diagram</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#project-structure">Project Structure</a></li>
+    <li><a href="#plsql-scripts">PL/SQL Scripts</a></li>
+    <li><a href="#challenges">Challenges</a></li>
+    <li><a href="#appendix---useful-ubuntu-commands">Appendix - Useful Ubuntu Commands</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+</ol>
 
 <h2 id="project-overview">Project Overview</h2>
-<p>This project showcases a Dockerized approach to managing organizational data through a MySQL database interfaced with PHP. Docker containers are used to encapsulate the MySQL and PHP environments, providing consistency and ease of deployment. The <code>mydatabase</code> is used to store essential information about departments, employees, and projects. Additionally, KNIME is used to load datasets, and PL/SQL scripts are integrated for advanced database management tasks.</p>
+<p>This project showcases a Dockerized approach to managing organizational data through a MySQL database interfaced with PHP. Docker containers are used to encapsulate the MySQL and PHP environments, providing consistency and ease of deployment. The <code>mydatabase</code> is used to store essential information about departments, employees, and projects. Additionally, PL/SQL scripts are integrated for advanced database management tasks.</p>
 
 <h2 id="features">Features</h2>
 <ul>
@@ -20,7 +30,6 @@
             <li><code>deptView.php</code>: Provides a comprehensive view of department details, including related projects.</li>
         </ul>
     </li>
-    <li><b>Data Loading via KNIME:</b> Efficiently loads and preprocesses datasets to prepare data for the database.</li>
     <li><b>PL/SQL Integration:</b> Two PL/SQL scripts handle more complex data management operations within the MySQL database.</li>
 </ul>
 
@@ -33,7 +42,6 @@
 <h3>Prerequisites</h3>
 <ul>
     <li><b>Docker:</b> Install Docker and Docker Compose to run the containers.</li>
-    <li><b>KNIME:</b> Install KNIME Analytics Platform if you intend to use it for data loading.</li>
     <li><b>MySQL:</b> Basic knowledge of MySQL for database operations is recommended.</li>
 </ul>
 
@@ -69,14 +77,6 @@ cd organizational-database-management</code></pre>
         </ul>
     </li>
 </ul>
-
-<h2 id="data-loading-with-knime">Data Loading with KNIME</h2>
-<p>KNIME is used to load and preprocess datasets into <code>mydatabase</code>. To load data:</p>
-<ol>
-    <li><b>Connect KNIME to MySQL:</b> Use the MySQL Connector node to set up a connection to your Dockerized MySQL instance.</li>
-    <li><b>Load and Transform Data:</b> Use KNIME’s nodes to import and prepare the data, aligning it with the <code>mydatabase</code> schema.</li>
-    <li><b>Execute Workflow:</b> Run the workflow to push data directly into MySQL.</li>
-</ol>
 
 <h2 id="plsql-scripts">PL/SQL Scripts</h2>
 <p>Two PL/SQL scripts are included to enhance the database’s capabilities:</p>
