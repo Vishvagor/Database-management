@@ -34,7 +34,7 @@
 </ul>
 
 <h2 id="er-diagram">ER Diagram</h2>
-<p><img src="path/to/your/ERdiagram.png" alt="ER Diagram"></p>
+<p><img src="ER-diagram.png" alt="ER Diagram"></p>
 <p>The ER diagram shows relationships among the tables, including <code>Employee</code>, <code>Department</code>, <code>Project</code>, <code>Works_On</code>, <code>Dependent</code>, and <code>Dept_Location</code>. This relational model supports flexible and reliable data access and management.</p>
 
 <h2 id="getting-started">Getting Started</h2>
